@@ -339,19 +339,24 @@
 
     .project-image {
       height: 240px;
-      background: linear-gradient(135deg, #222, #111);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #888;
-      font-weight: 700;
+      overflow: hidden;
       position: relative;
+    }
+
+    .project-img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(0.85);
+      transform-origin: center;
+      display: block;
     }
 
     .project-year {
       position: absolute;
       top: 18px;
       left: 18px;
+      z-index: 2;
       display: inline-block;
       background: var(--accent);
       color: white;
@@ -641,7 +646,7 @@
     <div class="container">
       <nav>
         <div class="brand">
-          <img src="logo.png" alt="Wallenbring Racing logga">
+          <img src="WR-logga.png" alt="Wallenbring Racing logga">
           <div class="brand-text">Wallenbring Racing</div>
         </div>
         <div class="menu">
@@ -658,9 +663,6 @@
   <main>
     <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-logo">
-          <img src="logo.png" alt="Wallenbring Racing logga">
-        </div>
         <h1>Wallenbring Racing</h1>
         <div class="hero-subtitle">24H Endurance Racing</div>
         <p class="lead">
@@ -726,7 +728,7 @@
           <div class="project-card">
             <div class="project-image">
               <div class="project-year">2024</div>
-              BILD 2024
+              <img src="V40.png" class="project-img">
             </div>
             <div class="project-body">
               <h3>Volvo V40</h3>
@@ -741,7 +743,7 @@
           <div class="project-card">
             <div class="project-image">
               <div class="project-year">2025</div>
-              BILD 2025
+              <img src="S40.png" class="project-img">
             </div>
             <div class="project-body">
               <h3>Volvo S40</h3>
@@ -756,7 +758,7 @@
           <div class="project-card">
             <div class="project-image">
               <div class="project-year">2026</div>
-              BILD 2026
+              <img src="BMW.png" class="project-img">
             </div>
             <div class="project-body">
               <h3>BMW E46</h3>
@@ -800,7 +802,7 @@
         <div class="sponsor-cta">
           <h3>Bli en sponsor</h3>
           <p>Är du intresserad av att sponsra vårt team? Vi söker alltid nya partners som delar vår passion för motorsport.</p>
-          <a class="btn btn-primary" href="mailto:kontakt@wallenbringracing.se">Kontakta oss</a>
+          <a class="btn btn-primary" href="mailto:wallenbring.racing@outlook.com">Kontakta oss</a>
         </div>
       </div>
     </section>
@@ -830,13 +832,13 @@
               <textarea class="form-textarea" id="meddelande" placeholder="Skriv ditt meddelande här..."></textarea>
             </div>
 
-            <a class="btn btn-primary contact-submit" href="mailto:kontakt@wallenbringracing.se?subject=Kontakt%20fr%C3%A5n%20hemsidan">Skicka meddelande</a>
+            <a class="btn btn-primary contact-submit" href="mailto:wallenbring.racing@outlook.com?subject=Kontakt%20fr%C3%A5n%20hemsidan">Skicka meddelande</a>
           </div>
 
           <div class="contact-side">
             <div class="contact-card">
               <h3>E-post</h3>
-              <p><a href="mailto:kontakt@wallenbringracing.se">kontakt@wallenbringracing.se</a></p>
+              <p><a href="mailto:wallenbring.racing@outlook.com">wallenbring.racing@outlook.com</a></p>
             </div>
 
             <div class="contact-card">
@@ -862,7 +864,7 @@
     <footer>
       <div class="container footer-grid">
         <div>
-          <img class="footer-logo" src="logo.png" alt="Wallenbring Racing logga">
+          <img class="footer-logo" src="WR-logga.png" alt="Wallenbring Racing logga">
           <div>24H Endurance Racing</div>
         </div>
 
