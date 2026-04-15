@@ -685,21 +685,35 @@
     }
 
     @media (max-width: 760px) {
+      header {
+        padding: 12px 0;
+      }
+
       nav {
         flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .header-social {
-        margin-right: 0;
-      }
-
-      .menu {
+        align-items: center;
         gap: 12px;
       }
 
+      .brand img {
+        height: 42px;
+      }
+
+      .header-social {
+        display: none;
+      }
+
+      .menu {
+        justify-content: center;
+        gap: 10px 18px;
+      }
+
+      .menu a {
+        font-size: 0.9rem;
+      }
+
       .hero {
-        padding-top: 110px;
+        padding-top: 90px;
         min-height: auto;
       }
 
@@ -707,10 +721,6 @@
       .sponsor-grid,
       .project-grid {
         grid-template-columns: 1fr;
-      }
-
-      .brand img {
-        height: 42px;
       }
 
       .social-links a,
