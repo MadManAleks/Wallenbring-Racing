@@ -5,18 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wallenbring Racing</title>
   <meta name="description" content="Wallenbring Racing är ett familjebaserat långloppsracingteam från Hyssna med fokus på 24-timmars racing." />
-<meta property="og:title" content="Wallenbring Racing">
-<meta property="og:description" content="Familjebaserat långloppsracingteam från Hyssna med fokus på 24-timmars racing.">
-<meta property="og:image" content="https://wallenbringracing.se/WR-logga.png">
-<meta property="og:url" content="https://wallenbringracing.se/">
-<meta property="og:type" content="website">
+  <meta property="og:title" content="Wallenbring Racing">
+  <meta property="og:description" content="Familjebaserat långloppsracingteam från Hyssna med fokus på 24-timmars racing.">
+  <meta property="og:image" content="https://wallenbringracing.se/WR-logga.png">
+  <meta property="og:url" content="https://wallenbringracing.se/">
+  <meta property="og:type" content="website">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Wallenbring Racing">
-<meta name="twitter:description" content="Familjebaserat långloppsracingteam från Hyssna med fokus på 24-timmars racing.">
-<meta name="twitter:image" content="https://wallenbringracing.se/WR-logga.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wallenbring Racing">
+  <meta name="twitter:description" content="Familjebaserat långloppsracingteam från Hyssna med fokus på 24-timmars racing.">
+  <meta name="twitter:image" content="https://wallenbringracing.se/WR-logga.png">
 
-  <!-- Ikoner -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -27,6 +26,7 @@
       --muted: #b7b7c2;
       --accent: #d90429;
       --line: #23232c;
+      --success: #28c76f;
     }
 
     * {
@@ -534,6 +534,10 @@
       align-items: start;
     }
 
+    .contact-form {
+      display: block;
+    }
+
     .form-group {
       margin-bottom: 20px;
     }
@@ -557,6 +561,13 @@
       padding: 16px 14px;
       font-size: 1rem;
       outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: rgba(217,4,41,1);
+      box-shadow: 0 0 0 3px rgba(217,4,41,0.12);
     }
 
     .form-input::placeholder,
@@ -576,6 +587,27 @@
       font-size: 1rem;
       margin-top: 8px;
       text-align: center;
+      border-radius: 999px;
+    }
+
+    .contact-submit:disabled {
+      opacity: 0.7;
+      cursor: wait;
+    }
+
+    .form-status {
+      margin-top: 14px;
+      font-size: 0.95rem;
+      min-height: 24px;
+      color: #d8d8de;
+    }
+
+    .form-status.success {
+      color: var(--success);
+    }
+
+    .form-status.error {
+      color: #ff8b8b;
     }
 
     .contact-side {
@@ -671,6 +703,15 @@
       font-size: 0.95rem;
       border-top: 1px solid var(--line);
       margin-top: 30px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #23232c;
+      color: #b7b7c2;
+      font-size: 14px;
     }
 
     .image-source {
@@ -851,7 +892,7 @@
         <div class="mantorp-grid">
           <div class="mantorp-image">
             <img src="MANTORP.png" alt="Mantorp Park banlayout">
-             <div class="image-source">Källa: Rejsa.nu</div>
+            <div class="image-source">Källa: Rejsa.nu</div>
           </div>
 
           <div class="mantorp-text">
@@ -955,7 +996,7 @@
         <div class="sponsor-cta">
           <h3>Bli en sponsor</h3>
           <p>Är du intresserad av att sponsra vårt team? Vi söker alltid nya partners som delar vår passion för motorsport.</p>
-          <a class="btn btn-primary" href="mailto:wallenbring.racing@outlook.com">Kontakta oss</a>
+          <a class="btn btn-primary" href="#kontakt">Kontakta oss</a>
         </div>
       </div>
     </section>
@@ -969,24 +1010,29 @@
       </div>
 
       <div class="contact-grid">
-        <div class="contact-form">
+        <form class="contact-form" id="contact-form">
+          <input type="hidden" name="access_key" value="c50e4a02-245f-4f63-a20d-7655422f5856">
+          <input type="hidden" name="subject" value="Nytt meddelande från Wallenbring Racing">
+          <input type="hidden" name="from_name" value="Wallenbring Racing">
+
           <div class="form-group">
             <label class="form-label" for="namn">Namn</label>
-            <input class="form-input" id="namn" type="text" placeholder="Ditt namn">
+            <input class="form-input" id="namn" name="name" type="text" placeholder="Ditt namn" required>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="epost">E-post</label>
-            <input class="form-input" id="epost" type="email" placeholder="din@email.com">
+            <input class="form-input" id="epost" name="email" type="email" placeholder="din@email.com" required>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="meddelande">Meddelande</label>
-            <textarea class="form-textarea" id="meddelande" placeholder="Skriv ditt meddelande här..."></textarea>
+            <textarea class="form-textarea" id="meddelande" name="message" placeholder="Skriv ditt meddelande här..." required></textarea>
           </div>
 
-          <a class="btn btn-primary contact-submit" href="mailto:wallenbring.racing@outlook.com?subject=Kontakt%20fr%C3%A5n%20hemsidan">Skicka meddelande</a>
-        </div>
+          <button class="btn btn-primary contact-submit" id="contact-submit" type="submit">Skicka meddelande</button>
+          <p class="form-status" id="form-status"></p>
+        </form>
 
         <div class="contact-side">
           <div class="contact-card">
@@ -1042,14 +1088,57 @@
           <a href="https://www.instagram.com/wallenbringracing" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="https:///www.youtube.com/@Wallenbringracing" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <a href="https://www.youtube.com/@Wallenbringracing" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
             <i class="fab fa-youtube"></i>
           </a>
         </div>
       </div>
     </div>
- <div style="text-align:center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #23232c; color:#b7b7c2; font-size:14px;">
-    © 2026 Wallenbring Racing. All rights reserved.
+
+    <div class="container">
+      <div class="footer-bottom">© 2026 Wallenbring Racing. All rights reserved.</div>
+    </div>
   </footer>
+
+  <script>
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+    const submitButton = document.getElementById("contact-submit");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      status.textContent = "Skickar meddelande...";
+      status.className = "form-status";
+      submitButton.disabled = true;
+      submitButton.textContent = "Skickar...";
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          status.textContent = "Tack! Ditt meddelande har skickats.";
+          status.className = "form-status success";
+          form.reset();
+        } else {
+          status.textContent = "Något gick fel. Försök igen.";
+          status.className = "form-status error";
+        }
+      } catch (error) {
+        status.textContent = "Något gick fel. Kontrollera internet och försök igen.";
+        status.className = "form-status error";
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Skicka meddelande";
+      }
+    });
+  </script>
 </body>
 </html>
