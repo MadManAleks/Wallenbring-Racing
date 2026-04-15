@@ -61,6 +61,7 @@
       display: flex;
       align-items: center;
       gap: 14px;
+      flex-shrink: 0;
     }
 
     .brand img {
@@ -69,11 +70,38 @@
       display: block;
     }
 
+    .header-social {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-right: auto;
+    }
+
+    .header-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(217,4,41,0.85);
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: 0.2s ease;
+      background: rgba(255,255,255,0.01);
+    }
+
+    .header-social a:hover {
+      background: rgba(217,4,41,0.12);
+      transform: translateY(-3px);
+    }
+
     .menu {
       display: flex;
       gap: 18px;
       flex-wrap: wrap;
       align-items: center;
+      justify-content: flex-end;
     }
 
     .menu a {
@@ -636,6 +664,12 @@
       margin-top: 30px;
     }
 
+    .image-source {
+      font-size: 0.8rem;
+      color: #b7b7c2;
+      margin-top: 6px;
+    }
+
     @media (max-width: 980px) {
       .contact-grid,
       .footer-grid,
@@ -654,6 +688,10 @@
       nav {
         flex-direction: column;
         align-items: flex-start;
+      }
+
+      .header-social {
+        margin-right: 0;
       }
 
       .menu {
@@ -680,11 +718,6 @@
         width: 54px;
         height: 54px;
       }
-      .image-source {
-  font-size: 0.8rem;
-  color: #b7b7c2;
-  margin-top: 6px;
-}
     }
   </style>
 </head>
@@ -694,6 +727,18 @@
       <nav>
         <div class="brand">
           <img src="WR-logga.png" alt="Wallenbring Racing logga">
+        </div>
+
+        <div class="header-social">
+          <a href="https://www.facebook.com/profile.php?id=61572160356060&locale=sv_SE" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/wallenbring_racing" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
         </div>
 
         <div class="menu">
@@ -745,6 +790,7 @@
               <div class="result-line"><span>Bil:</span> Volvo V40</div>
               <div class="result-line"><span>Antal varv:</span> 470</div>
               <div class="result-line"><span>Placering:</span> 21 av 60</div>
+              <div class="result-line"><span>Kommentar:</span> Bristande förberedelser och ojämn stintplanering.</div>
             </div>
 
             <div class="result-card">
@@ -752,13 +798,14 @@
               <div class="result-line"><span>Bil:</span> Volvo S40</div>
               <div class="result-line"><span>Antal varv:</span> 507</div>
               <div class="result-line"><span>Placering:</span> 32 av 60</div>
+              <div class="result-line"><span>Kommentar:</span> Återkommande problem med bromsarna som påverkade tempot och resulterade i mycket tid i depån.</div>
             </div>
 
             <div class="result-card highlight">
               <div class="result-year">2026</div>
               <div class="result-line"><span>Bil:</span> BMW E46</div>
               <div class="result-line"><span>Mål:</span> Topp 10</div>
-              <div class="result-line"><span>Fokus:</span> Bättre helhet och högre nivå</div>
+              <div class="result-line"><span>Fokus:</span> Helhet, tempo och stabilitet</div>
             </div>
           </div>
         </section>
@@ -860,26 +907,26 @@
         <div id="sponsorer" class="sponsor-grid">
           <div class="sponsor-card">
             <div class="sponsor-icon">🤝</div>
-            <div class="sponsor-name">Din sponsor här</div>
+            <div class="sponsor-name">Blivande samarbetspartner</div>
           </div>
           <div class="sponsor-card">
             <div class="sponsor-icon">🤝</div>
-            <div class="sponsor-name">Din sponsor här</div>
+            <div class="sponsor-name">Blivande samarbetspartner</div>
           </div>
           <div class="sponsor-card">
             <div class="sponsor-icon">🤝</div>
-            <div class="sponsor-name">Din sponsor här</div>
+            <div class="sponsor-name">Blivande samarbetspartner</div>
           </div>
           <div class="sponsor-card">
             <div class="sponsor-icon">🤝</div>
-            <div class="sponsor-name">Din sponsor här</div>
+            <div class="sponsor-name">Blivande samarbetspartner</div>
           </div>
         </div>
 
         <div class="sponsor-cta">
           <h3>Bli en sponsor</h3>
           <p>Är du intresserad av att sponsra vårt team? Vi söker alltid nya partners som delar vår passion för motorsport.</p>
-          <a class="btn btn-primary" href="mailto:kontakt@wallenbringracing.se">Kontakta oss</a>
+          <a class="btn btn-primary" href="mailto:wallenbring.racing@outlook.com">Kontakta oss</a>
         </div>
       </div>
     </section>
@@ -909,13 +956,13 @@
             <textarea class="form-textarea" id="meddelande" placeholder="Skriv ditt meddelande här..."></textarea>
           </div>
 
-          <a class="btn btn-primary contact-submit" href="mailto:kontakt@wallenbringracing.se?subject=Kontakt%20fr%C3%A5n%20hemsidan">Skicka meddelande</a>
+          <a class="btn btn-primary contact-submit" href="mailto:wallenbring.racing@outlook.com?subject=Kontakt%20fr%C3%A5n%20hemsidan">Skicka meddelande</a>
         </div>
 
         <div class="contact-side">
           <div class="contact-card">
             <h3>E-post</h3>
-            <p><a href="mailto:kontakt@wallenbringracing.se">kontakt@wallenbringracing.se</a></p>
+            <p><a href="mailto:wallenbring.racing@outlook.com">wallenbring.racing@outlook.com</a></p>
           </div>
 
           <div class="contact-card">
